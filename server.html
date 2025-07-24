@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenDash - Server</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+    @media (min-width: 992px) {
+        .server-card-border {
+            border-right: 2px solid #18a4e0;
+        }
+    }
+    </style>
 </head>
 <body>
     <div class="d-flex">
@@ -35,9 +43,105 @@
             <header class="mb-4">
                 <h1>Server</h1>
             </header>
-            <div class="card">
-                <div class="card-body">
-                    <p class="card-text">Server management content goes here.</p>
+            <div class="row g-0 flex-wrap">
+                <!-- Server Info Card -->
+                <div class="col-lg-6 mb-4 mb-lg-0 server-card-border">
+                    <div class="card h-100 rounded-0 rounded-start">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4"><i class="bi bi-hdd-network me-2"></i>Server Info</h5>
+                            <dl class="row mb-0">
+                                <dt class="col-5">Name:</dt>
+                                <dd class="col-7">OpenVPN-Server-1</dd>
+                                <dt class="col-5">Status:</dt>
+                                <dd class="col-7"><span class="badge bg-success">Online</span></dd>
+                                <dt class="col-5">Public IP:</dt>
+                                <dd class="col-7">203.0.113.45</dd>
+                                <dt class="col-5">Port/Protocol:</dt>
+                                <dd class="col-7">1194/UDP</dd>
+                                <dt class="col-5">Private IP Pool:</dt>
+                                <dd class="col-7">10.8.0.0/24</dd>
+                                <dt class="col-5">User Counts:</dt>
+                                <dd class="col-7">123</dd>
+                                <dt class="col-5">Uptime:</dt>
+                                <dd class="col-7">5 days, 3 hours</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!-- Server Logs Card -->
+                <div class="col-lg-6">
+                    <div class="card h-100 rounded-0 rounded-end">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4"><i class="bi bi-list-ul me-2"></i>Server Logs</h5>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>User</th>
+                                            <th>Event</th>
+                                            <th>IP</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2024-05-01 10:00</td>
+                                            <td>john.doe</td>
+                                            <td>Connected</td>
+                                            <td>10.8.0.10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-05-01 09:55</td>
+                                            <td>jane.smith</td>
+                                            <td>Disconnected</td>
+                                            <td>10.8.0.11</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-05-01 09:50</td>
+                                            <td>alice</td>
+                                            <td>Connected</td>
+                                            <td>10.8.0.12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-05-01 09:45</td>
+                                            <td>bob</td>
+                                            <td>Connected</td>
+                                            <td>10.8.0.13</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Firewall and OS Info Cards -->
+            <div class="row mt-4 g-0 flex-wrap">
+                <div class="col-lg-6 mb-4 mb-lg-0 server-card-border">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3"><i class="bi bi-shield-lock me-2"></i>Firewall Status</h5>
+                            <dl class="row mb-0">
+                                <dt class="col-5">iptables:</dt>
+                                <dd class="col-7"><span class="badge bg-success">Active</span></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3"><i class="bi bi-cpu me-2"></i>OS Information</h5>
+                            <dl class="row mb-0">
+                                <dt class="col-5">OS:</dt>
+                                <dd class="col-7">Ubuntu 22.04 LTS</dd>
+                                <dt class="col-5">Kernel:</dt>
+                                <dd class="col-7">5.15.0-72-generic</dd>
+                                <dt class="col-5">Arch:</dt>
+                                <dd class="col-7">x86_64</dd>
+                            </dl>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
